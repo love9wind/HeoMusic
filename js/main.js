@@ -1,5 +1,5 @@
 console.log("\n %c HeoMusic 开源静态音乐播放器 v1.5 %c https://github.com/zhheo/HeoMusic \n", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;")
-var volume = 0.8;
+var volume = 0.6;
 
 // 获取地址栏参数
 // 创建URLSearchParams对象并传入URL中的查询字符串
@@ -49,10 +49,10 @@ var heo = {
       console.log("获取到自定义内容")
       var id = params.get("id")
       var server = params.get("server")
-      heoMusicPage.innerHTML = `<meting-js id="${id}" server="${server}" type="${playlistType}" mutex="true" preload="auto" order="random"></meting-js>`;
+      heoMusicPage.innerHTML = `<meting-js id="${id}" server="${server}" type="${playlistType}" mutex="true" preload="auto" order="list"></meting-js>`;
     } else {
       console.log("无自定义内容")
-      heoMusicPage.innerHTML = `<meting-js id="${userId}" server="${userServer}" type="${userType}" mutex="true" preload="auto" order="random"></meting-js>`;
+      heoMusicPage.innerHTML = `<meting-js id="${userId}" server="${userServer}" type="${userType}" mutex="true" preload="auto" order="list"></meting-js>`;
     }
     heo.changeMusicBg(false);
   }
